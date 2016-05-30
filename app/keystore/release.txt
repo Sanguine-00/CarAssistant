@@ -1,0 +1,27 @@
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: androidfine
+创建日期: 2015-8-23
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+发布者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+序列号: 55d9710f
+有效期开始日期: Sun Aug 23 15:06:55 CST 2015, 截止日期: Thu Aug 16 15:06:55 CST 2040
+证书指纹:
+	 MD5: 40:FF:88:21:72:BF:36:FA:2B:FC:F4:09:B5:FC:B7:43
+	 SHA1: 8E:64:43:84:CA:0F:84:EA:E8:47:98:51:8F:29:DB:F9:A8:23:DF:7C
+	 SHA256: 9F:43:CA:B7:29:82:7B:21:3E:DE:65:C6:AB:9D:FD:84:97:F5:50:FF:E7:BE:05:30:F5:95:15:9D:F4:3E:83:F9
+	 签名算法名称: SHA1withRSA
+	 版本: 3
+
+
+*******************************************
+*******************************************
+
+

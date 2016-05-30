@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_main_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/mGasMapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <include
+            android:id="@+id/includeGasDetail"
+            layout="@layout/activity_btn_gas_detail_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/includeGasNavigation"
+            layout="@layout/activity_btn_map_start_navigation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgGasMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/space_5"
+            android:padding="@dimen/space_5"
+            android:src="@drawable/img_myloc" />
+
+        <ImageView
+            android:id="@+id/imgGasPreference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/space_5"
+            android:background="@color/gray_slate"
+            android:padding="@dimen/space_5"
+            android:src="@drawable/img_change_preference"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/tvGasTrafficCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgGasMyLocation"
+            android:padding="@dimen/space_10"
+            style="@style/TrafficCheckboxTheme"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

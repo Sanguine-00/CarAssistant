@@ -1,0 +1,114 @@
+import java.util.regex.Pattern
+
+apply plugin: 'com.android.application'
+apply plugin: 'packer'
+
+
+packer {
+    /**渠道包**/
+    manifestMatcher = ['UMENG_CHANNEL','Promotion_Market']
+    archiveOutput = file(new File(project.rootProject.buildDir.path, "apks"))
+    archiveNameFormat = '${appPkg}-c-${buildType}-${buildTime}'
+
+    /**版本号自增**/
+    // 指定是否使用build版本号自增
+    buildNumberAuto = true
+    // 指定使用版本号自增的buildType，默认是全部
+    buildNumberTypeMatcher = ['release', 'debug']
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+    defaultConfig {
+        // Warning:Renderscript support mode is not currently supported with renderscript target 21+
+        renderscriptTargetApi 20
+        renderscriptSupportModeEnabled true
+
+        applicationId "njci.software.car"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            keyAlias 'AndroidFine'
+            keyPassword '11118888'
+            storeFile file('keystore/release.jks')
+            storePassword '11118888'
+        }
+        debug {
+            keyAlias 'debug'
+            keyPassword '11118888'
+            storeFile file('keystore/debug.jks')
+            storePassword '11118888'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+    }
+    sourceSets {
+        main() {
+          jniLibs.srcDirs = ['libs']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    /*packagingOptions {
+        exclude 'lib/armeabi-v7a/librsjni.so'
+        exclude 'lib/armeabi-v7a/libRSSupport.so'
+        exclude 'lib/mips/librsjni.so'
+        exclude 'lib/mips/libRSSupport.so'
+        exclude 'lib/x86/librsjni.so'
+        exclude 'lib/x86/libRSSupport.so'
+
+    }*/
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.alibaba:fastjson:1.1.34.android'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    compile 'in.srain.cube:ultra-ptr:1.0.10'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    compile 'com.android.support:support-v4:22.2.1'
+    /*compile files('libs/baidumapapi_base_v3_7_3.jar')
+        compile files('libs/baidumapapi_cloud_v3_7_3.jar')
+        compile files('libs/baidumapapi_map_v3_7_3.jar')
+        compile files('libs/baidumapapi_radar_v3_7_3.jar')
+        compile files('libs/baidumapapi_search_v3_7_3.jar')
+        compile files('libs/baidumapapi_util_v3_7_3.jar')*/
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/IndoorscapeAlbumPlugin.jar')
+    compile files('libs/juhe_sdk_v_2_7.jar')
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn_home_parking"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_parking"
+            android:text="@string/home_parking" />
+
+        <RadioButton
+            android:id="@+id/btn_home_gas_station"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_gas_station"
+            android:text="@string/home_gas" />
+
+        <RadioButton
+            android:id="@+id/btn_home_traffic_violation"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_traffic_violation"
+            android:text="@string/home_traffic_violation" />
+
+        <RadioButton
+            android:id="@+id/btn_home_tmc"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_tmc"
+            android:text="@string/home_tmc" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/groupBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn_home_4s"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_4s"
+            android:text="@string/home_4s" />
+
+        <RadioButton
+            android:id="@+id/btn_home_insurance"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_insurance"
+            android:text="@string/home_insurance" />
+
+        <RadioButton
+            android:id="@+id/btn_home_emergency"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_emergency"
+            android:text="@string/home_emergency" />
+
+        <RadioButton
+            android:id="@+id/btn_home_route"
+            style="@style/main_content_home_btn"
+            android:drawableTop="@drawable/home_route"
+            android:text="@string/home_route" />
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/viewSplit"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#EDEDED" />
+
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/rotate_header_list_view_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cube_ptr:ptr_duration_to_close="300"
+        cube_ptr:ptr_duration_to_close_header="2000"
+        cube_ptr:ptr_keep_header_when_refresh="true"
+        cube_ptr:ptr_pull_to_fresh="false"
+        cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+        cube_ptr:ptr_resistance="1.7">
+
+
+        <njci.software.car.ui.loadmore.LoadMoreListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/CommonListViewStyle" />
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+</LinearLayout>

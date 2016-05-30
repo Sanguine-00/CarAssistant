@@ -1,0 +1,59 @@
+keytool 错误: java.lang.Exception: 密钥库文件不存在: debug.jsk
+java.lang.Exception: 密钥库文件不存在: debug.jsk
+	at sun.security.tools.KeyTool.doCommands(KeyTool.java:738)
+	at sun.security.tools.KeyTool.run(KeyTool.java:340)
+	at sun.security.tools.KeyTool.main(KeyTool.java:333)
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: debug
+创建日期: 2016-1-13
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+发布者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+序列号: 5695bb9c
+有效期开始日期: Wed Jan 13 10:51:08 CST 2016, 截止日期: Sun Jan 06 10:51:08 CST 2041
+证书指纹:
+	 MD5: 3F:20:70:8F:2C:A4:77:90:83:0C:B3:67:92:98:20:0D
+	 SHA1: 48:E3:70:3F:80:A0:19:2F:2B:F7:B7:F3:0A:AD:0F:54:4E:95:0C:02
+	 SHA256: F3:08:3D:D4:0C:3E:81:40:92:14:33:E6:EB:B6:8A:25:C5:E5:70:84:B7:AC:F2:56:A3:E6:83:2E:4D:54:83:FE
+	 签名算法名称: SHA1withRSA
+	 版本: 3
+
+
+*******************************************
+*******************************************
+
+
+
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: androidfine
+创建日期: 2015-8-23
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+发布者: CN=tianshaojie, OU=yuzhi, O=yuzhi, L=beijing, ST=beijing, C=86
+序列号: 55d9710f
+有效期开始日期: Sun Aug 23 15:06:55 CST 2015, 截止日期: Thu Aug 16 15:06:55 CST 2040
+证书指纹:
+	 MD5: 40:FF:88:21:72:BF:36:FA:2B:FC:F4:09:B5:FC:B7:43
+	 SHA1: 8E:64:43:84:CA:0F:84:EA:E8:47:98:51:8F:29:DB:F9:A8:23:DF:7C
+	 SHA256: 9F:43:CA:B7:29:82:7B:21:3E:DE:65:C6:AB:9D:FD:84:97:F5:50:FF:E7:BE:05:30:F5:95:15:9D:F4:3E:83:F9
+	 签名算法名称: SHA1withRSA
+	 版本: 3
+
+
+*******************************************
+*******************************************
+
+
